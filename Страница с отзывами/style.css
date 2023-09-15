@@ -1,0 +1,66 @@
+#testimonials {
+    background-color: rgb(238, 238, 238);
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    margin: 100px 0;
+}
+h1.has-centered-text {
+    color: red;
+    text-align: center;
+}
+div.wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+}
+div.review-item {
+    color: #404040;
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 30px;
+    padding: 25px;
+    font-size: 20px;
+    height: 160px;
+    width: 40%;
+    border-bottom: 5px solid #e3e3e3;
+    border-top: 2px solid #e3e3e3;
+    border-right: 4px solid #e3e3e3;
+    
+    float: left;
+}
+div.author-wrapper {
+    margin: 20px;
+}
+div.author-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid red;
+    margin-right: 2px;
+    float: left;
+    overflow: hidden;
+}
+div.author-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+div.author-country {
+    font-style: italic;
+    color: #696969;
+}
+.clear {
+    clear: both;
+}
+.btn {
+    color: #e3e3e3;
+    background-color: brown;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+
+    width: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    margin: 40px auto;
+}
