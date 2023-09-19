@@ -1,0 +1,9 @@
+h1, h2 {
+    color: orange;
+    font-size: 30px;
+}
+#main p.snippet{
+    color: lightblue;
+    font-style: italic;
+    font-size: 15px;
+}

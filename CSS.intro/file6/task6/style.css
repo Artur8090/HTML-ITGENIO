@@ -1,0 +1,9 @@
+h1, h2 {
+    color: orange;
+    font-size: 30px;
+}
+.snippet, .bar, .footer {
+    font-style: italic;
+    color: lightblue;
+    font-size: 15px;
+}
