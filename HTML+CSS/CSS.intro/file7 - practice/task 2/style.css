@@ -1,0 +1,21 @@
+h2{
+    color: green;
+    text-align: center;
+}
+body {
+    background-color: beige;
+}
+span{
+    color: #53e483;
+    font-size: 25px;
+}
+li {
+    font-weight: bold;
+    font-size: 30px;
+}
+img {
+    width: 200px;
+    border: 8px solid green;
+    margin: 20px;
+
+}

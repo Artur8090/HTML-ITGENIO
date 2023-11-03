@@ -1,0 +1,145 @@
+@font-face {
+    font-family: Comfortaa;
+    src: url(Fonts/transfonter.org-20231014-122223/Comfortaa-Regular.woff)
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Comfortaa;
+
+}
+.header {
+    width: 100vw;
+    height: 10vh;
+    background-color: #142d4c;
+
+}
+.header img {
+    height: 75px;
+    width: 75px;
+    float: left;
+    padding: 10px 15px 15px 20px 
+}
+.header h1 {
+    text-align: center;
+    color: #9fd3c7;
+    margin: 0;
+    padding-top: 30px;
+
+}
+.nav {
+    width: 100vw;
+    height: 6vh;
+    clear:none;
+    background-color: #385170;
+    padding: 1px 0px;
+    color: #eaf6f6;
+
+}
+ul{
+    list-style-type: none;
+    height: 20px;
+    margin-left: 41%;
+    
+    
+}
+li {
+    float: left;
+    padding: 9px 9px;
+}
+
+a{
+    vertical-align: middle;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+}
+a:visited{
+    color: #eaf6f6;
+}
+a:link{
+    color: #eaf6f6;
+}
+.content{
+    height: 100vh;
+    width: 60%;
+    background-color: #a2a8d3;
+    float: left;
+    padding-top: 0;
+}
+.content .post{
+    padding: 20px 20px;
+    margin: 10px 10px;
+    background-color: #9896f1;
+    border-radius: 10px 15px 15px 10px;
+
+}
+
+.gallery{
+    height: 100vh;
+    width: 40%;
+    background-color: #a2a8d3;
+    float: right;
+}
+.gallery h2{
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+.gallery img{
+    height: 150px;
+    width: auto;
+    padding: 40px 50px;
+    padding-left: 60px;
+    border: 3px #142d4c solid;
+}
+.footer{
+    width: 100vw;
+    height: 5vh;
+    clear:none;
+    background-color: #385170;
+    padding: 2px 0px;
+    bottom: 0;
+    position: fixed;
+    color: #9fd3c7;
+}
+.footer ul img{
+    height: 20px;
+    width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <input type="name" placeholder="First name">
+    </div>
+    <div>
+        <input type="name" placeholder="Surname">
+    </div>
+    <div><label for="send">What is your age?</label></div>
+    <div>
+
+        <input type="range" id="send" oninput="result.value = send.value">
+    </div>
+    <div class="age">
+        <input type="text" id="result">
+    </div>
+    <div><label for="time">When do you have a course?</label></div>
+    <div>
+        <input type="time" id="time">
+    </div>
+    <div>
+        <input type="date" id="date">
+    </div>
+    <div><label for="telephone">Your phone number</label></div>
+    <div>
+        <input type="tel" id="telephone" placeholder="Phone number">
+    </div>
+    <div>
+        <input type="text" list="names" placeholder="Course">
+        <datalist id="names">
+            <option value="Scratch"></option>
+            <option value="JavaScript"></option>
+            <option value="Python"></option>
+            <option value="C++"></option>
+            <option value="C#"></option>
+        </datalist>
+    </div>
+    <div>
+        <input type="color">
+    </div>
+
+    <video controls autoplay muted>
+        <source src="video (2160p).mp4">
+    </video>
+    <audio  controls alt="Epilogue">
+        <source src="723714_Epilogue.mp3">
+    </audio>
+    <progress max="100" value="25"></progress>
+    </body>
+</html>

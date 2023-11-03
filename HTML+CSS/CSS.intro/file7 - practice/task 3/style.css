@@ -1,0 +1,11 @@
+h2 {
+    font: normal 40px verdana;
+    color: rgb(179, 160, 160);
+}
+span {
+    font-size: 30px;
+}
+p {
+    font: oblique 20px verdana;
+    color: white;
+}

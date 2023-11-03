@@ -1,0 +1,7 @@
+a[href] {
+    color: green;
+}
+p[align]{
+    color: purple;
+    font-size: 15px;
+}

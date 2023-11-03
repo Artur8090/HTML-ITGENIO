@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'Ruslan Display';
-    src: url('RuslanDisplay.woff2') format('woff2'),
-        url('RuslanDisplay.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
