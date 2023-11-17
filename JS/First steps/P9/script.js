@@ -33,5 +33,5 @@ console.log("Солнце уже взошло");
 console.log("Тебе можно еще повалятся в постеле :)"); : 
 console.log("Ты проспал") && console.log("Тревога");
 */
-let clr = +prompt("write a number");
-(clr == -1) ? document.querySelector("#blue") : document.querySelector("#red");
+let clr = prompt("write a number");
+(clr == -1) ? document.querySelector("style.blue") : document.querySelector("style.red");
