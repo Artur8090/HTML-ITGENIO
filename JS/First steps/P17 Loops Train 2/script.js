@@ -89,7 +89,7 @@ for(let i = 0; i < N; i++){
     }
     console.log(board)
 }
-*/
+
 let j = 23;
 let answr = "";
 while(j > 0){
@@ -106,3 +106,37 @@ while(j > 0){
     
 }
 console.log(answr)
+
+let letter = "";
+let word = prompt("Write a sentence");
+let x = word.length;
+while(x > 0){
+    for(let t = x - 1; t > 0; t--){
+        if(word.charAt(t) == word.charAt(x)){
+            letter += word.charAt(t)
+        }
+    }
+    x--;
+}
+console.log(letter)
+
+let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+let r = 0;
+let r2 = Math.round((Math.random()*10) + 5)
+let pass = "";
+for(let i = r2; i > 0; i--){
+    r = Math.round(Math.random()*64);
+    pass += charset.charAt(r);
+}
+console.log(pass);
+*/
+let N = prompt('Enter the number of terms: ');
+let n1 = 0 
+let n2 = 1 
+let nextTerm = 0;
+for (let i = 1; i <= N; i++) {
+    console.log(n1);
+    nextTerm = n1 + n2;
+    n1 = n2;
+    n2 = nextTerm;
+}
