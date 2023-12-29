@@ -1,0 +1,11 @@
+@font-face {
+    font-family: propisi;
+    src: url(font/Propisi\ \(1\).ttf);
+}
+
+body{
+    font-family: propisi;
+    text-align: center;
+    background-image: url(img/bg.png);
+    background-size: cover;
+}
