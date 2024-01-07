@@ -1,0 +1,10 @@
+let nouns1 = ["Стол","Орёл","Чай","Музей","Снег","Мир","Яд","Скорпион"];
+let adjectives = ["красный","большой","длинный","чёрный","красивый","легендарный","жёлтый","мальенкий"];
+let nouns2 = ["Шарик","Автомобиль","Крыса","Леопард","Чашка","Золото","Свет","Клей"];
+let random1 = Math.floor(Math.random() * 8); 
+let random2 = Math.floor(Math.random() * 8); 
+let random3 = Math.floor(Math.random() * 8); 
+let word1 = nouns1[random1];
+let word2 = adjectives[random2];
+let word3 = nouns2[random3];
+console.log(`Это ${word2} ${word1} и ${word3}`);
