@@ -1,14 +1,22 @@
-if(rand % 3 == 0) {
-    arr.push("<font color = red>" + rand + "</font>");
-} else if(i == 0){
-    arr.push(rand);  
-} else if(i % 3 == 0) {
-    arr.push("<strong>" + rand + "</strong>");
-} else if(rand ) {
-    arr.push(rand)
+/*
+let fruit = ["apple", "banana", "pineapple", "pear", "orange", "grapes", "watermellon"];
+let newFruit = [];
+let fruitIndx = "";
+for(let j = 5; j != 20; j++){
+    for(let i = 0; i != 7; i++){
+        fruitIndx = fruit[i];  
+         if(fruitIndx.length == j){
+            newFruit.push(fruit[i]);
+        }
+    }
 }
-if(rand > max){
-    max = rand
-};
-let indexMax = arr.indexOf(max);
-arr[indexMax] = "<font color = green>" + max + "</font>";
+fruit = newFruit;
+console.log(fruit);
+*/
+
+let fruit = ["apple", "banana", "watermellon", "grape", "orange"];
+let berries = ["blueberry", "strawberry", "blackberry", "raspberry", "cranberry"];
+let mix = fruit.concat(berries);
+mix.sort();
+console.log(mix)
+
