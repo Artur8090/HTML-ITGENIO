@@ -1,14 +1,18 @@
-
+/*
 function avarage(x){
     let sum = 0;
     
-    for(let i = 0; i <= x.length; i++){
-        sum += x[i];
+    for(let i = 0; i < x.length; i++){
+        if(x[i] < 0){
+            sum -= -1 * x[i] 
+        } else {
+            sum += x[i];
+        }
     }
     let y = sum/x.length
     return y;
 }
-document.write(avarage([1,-2,3,-4]))
+console.log(avarage([1,-4,6,-4]))
 
 
 function sort(x){
@@ -26,7 +30,7 @@ function sort(x){
     return arr;
 }
 console.log(sort([1,5,3,7,0,9]))
-/*
+
 
 function power(x){
     let y = 1;
@@ -69,4 +73,62 @@ function mult(x){
 console.log(mult([10,20,30,40,50]))
 console.log(mult([10,20,30,40,50,30,20,40,503]))
 console.log(mult([10,20,30,40,-50]))
+
+
+
+function convert(amount,valuex,valuey){
+    console.log(valuex)
+console.log(valuey)
+console.log(amount)
+switch(false){
+    case valuex = "dollar": 
+        switch(false){
+            case valuey = "euro":
+                return 0.92 * amount
+            case valuey = "rubley":
+                return 89.29* amount
+        }
+    break;
+    case valuex = "euro": 
+        switch(false){
+            case valuey = "dollar":
+                return 0.92 * amount
+            case valuey = "rubley":
+                return 97.32 * amount
+
+        }
+    break;
+        case valuex = "rubley": 
+            switch(false){
+            case valuey = "dollar":
+                return 89.29* amount
+            case valuey = "euro":
+                return 97.32 * amount
+        
+
+        }
+    break;
+
+}
+}
+console.log(convert(10,"rubley","dollar"))
 */
+function translate(x){
+    let y = x.toLowerCase();
+    let newSentance = [];
+    let rus = ["а","б","в","г","д","е","ё","ж","з","и","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ы","ш","щ","э","я"," ","!","?",".",","]
+    let rusEng = ["a","b","v","g","d","e","jo","je","z","i","j","k","l","m","n","o","p","r","s","t","u","f","h","ts","ch","ii","sh","tsh","eh","ya"," ","!","?",".",","];
+    for(let i = 0; i <= y.length; i++){
+        for(let j = 0; j <= rus.length; j++){
+            if(y.charAt(i) == rus[j]){
+                newSentance.push(rusEng[j])
+            }
+       }
+    }
+    newSentance[0] = newSentance[0].toUpperCase();
+    newSentance = newSentance.join("")
+    return "<hr>" + newSentance + "</hr>";
+}
+document.write(translate("Привет мир, это програмированние"))
+document.write(translate("Будте здоровы"))
+document.write(translate("Это круто!"))
