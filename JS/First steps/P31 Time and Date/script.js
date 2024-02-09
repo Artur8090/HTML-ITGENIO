@@ -64,12 +64,74 @@ if(days == 29){
     console.log("Обычный")
 }
 
-let startDate = new Date(2024,1,6);
+let startDate = new Date(2024,1,9);
 let date = new Date();
 let diff = date - startDate;
 console.log(diff/(1000))
-*/
+
 let startDate = new Date();
-let date = new Date(2024,1,7);
+let date = new Date(2024,1,10);
 let diff = date - startDate;
 console.log(diff/(1000))
+
+let currentDate = new Date();
+let birthDate = new Date(2024,8,28);
+let diff = birthDate - currentDate;
+console.log(diff/(1000*60*60*24));
+
+let currentDate = new Date();
+let newYear = new Date(2025,0,1);
+let diff = newYear - currentDate;
+console.log(diff/(1000*60*60*24));
+
+let date = new Date()
+let month = date.getMonth();
+let day = date.getDate();
+let year = date.getFullYear();
+let OldDate = new Date(year,month-3,day);
+console.log(OldDate)
+
+let date = new Date(2024,2,-1);
+let Day = date.getDay();
+console.log(Day)
+
+let date = new Date();
+let year = date.getFullYear();
+let newDate = new Date(year,2,0);
+let days = newDate.getDate();
+if(days == 29){
+    console.log("Высокосный")
+} else{
+    console.log("Обычный")
+}
+
+
+let date = new Date();
+let year = date.getFullYear();
+function vis(){
+    for(let i = year - 1; i != 0; i--){
+        let newDate = new Date(i,2,0);
+        let days = newDate.getDate();
+        if(days == 29){
+            return i + " Высокосный год"
+        } 
+    }
+
+}
+console.log(vis());
+
+
+let date = new Date();
+let year = date.getFullYear();
+function vis(){
+    for(let i = year + 1; i < 10000; i++){
+        let newDate = new Date(i,2,0);
+        let days = newDate.getDate();
+        if(days == 29){
+            return i + " Высокосный год"
+        } 
+    }
+
+}
+console.log(vis());
+*/
