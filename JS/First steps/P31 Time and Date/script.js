@@ -135,3 +135,39 @@ function vis(){
 }
 console.log(vis());
 */
+let date = "02-09"
+let date1 = "01-20";
+let date2 = "02-19";
+let date3 = "03-20";
+let date4 = "04-20";
+let date5 = "05-20";
+let date6 = "06-20";
+let date7 = "07-20";
+let date8 = "08-20";
+let date9 = "09-20";
+let date10 = "10-20";
+let date11= "11-20";
+let date12 = "12-20";
+if(date > date1 && date < date2){
+    console.log("Водолей")
+}else if(date > date2 && date < date3){
+    console.log("Рыбы")
+}else if(date > date3 && date < date4){
+    console.log("Овен")
+}else if(date > date4 && date < date5){
+    console.log("Тельец")
+}else if(date > date5 && date < date6){
+    console.log("Близнецы")
+}else if(date > date6 && date < date7){
+    console.log("Рак")
+}else if(date > date7 && date < date8){
+    console.log("Лев")
+}else if(date > date8 && date < date9){
+    console.log("Дева")
+}else if(date > date9 && date < date10){
+    console.log("Весы")
+}else if(date > date10 && date < date11){
+    console.log("Скорпион")
+}else if(date > date11 && date < date12){
+    console.log("Стрелец")
+} 
