@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="name">Артур</h1>
+    <h1 id="surname">Чеучев</h1>
+    <h1 id="text">text</h1>
+    <script>
+        let el = document.getElementById("name")
+        let el2 = document.getElementById("surname")
+        let el3 = document.getElementById("text")
+        el.style.backgroundColor = "red";
+        el2.style.backgroundColor = "green";
+        el3.style.backgroundColor = "#696969";
+        el3.style.color = "azure";
+        el3.style.margin = "34px";
+        el3.style.fontSize ="50px";
+    </script>
+
+    <p>a</p>
+    <p>b</p>
+    <p>c</p>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+    </ul>
+    <script>
+        let el4 = document.getElementsByTagName("p");
+        el4[1].style.color = "blue";
+        el4[1].style.fontSize ="50px";
+        console.log(el4)
+
+        let el5 = document.getElementsByTagName("li");
+        let len = el5.length;
+        for(let i = 1; i < len -1 ; i++){
+            el5[i].style.backgroundColor = "red";
+        }
+        el5[0].style.backgroundColor = "yellow"
+        el5[len -1].style.backgroundColor = "yellow"
+    </script>
+
+    <ul>
+        <li class="red">Java</li>
+        <li class="green">HTML</li>
+        <li class="red">JavaScript</li>
+        <li class="blue">C#</li>
+        <li class="black">C++</li>
+        <li class="yellow">CSS</li>
+    </ul>
+    <script>
+        el6 = document.getElementsByClassName('red');
+        console.log(el6)
+        for(let i = 0; i < el6.length; i++){
+            el6[i].style.margin = "20px";
+        }
+    </script>
+
+    <ul>
+        <li class="item"><input type="number" name="number" value="1"></li>
+        <li class="item"><input type="number" name="number" value="2"></li>
+        <li class="item"><input type="number" name="number" value="3"></li>
+        <li class="item"><input type="number" name="number" value="4"></li>
+        <li class="item"><input type="number" name="number" value="5"></li>
+
+    </ul>
+    <script>
+        el7 = document.getElementsByName('number');
+        console.log(el7);
+        let arr = [];
+        for(let i = 0; i < el7.length; i++){
+            arr.push(el7[i]);
+        }
+        arr.splice(2,2)
+        console.log(arr)
+    </script>
+        <ol>
+            <li class="item">1</li>
+            <li class="item">2</li>
+            <li class="item">3</li>
+            <li class="item">4</li>
+            <li class="item">5</li>
+        </ol>
+        <script>
+            el8 = document.querySelectorAll('ul > li');
+            for(let elem in el8){
+                if(elem == 3){
+                    console.log("yes")
+                } else{
+                    console.log("no")
+                }
+            }
+            el9 = document.querySelectorAll('ol > li:first-child');
+            console.log(el9.length)
+            console.log(el9)
+        </script>
+        <div id="elem">
+            txt<b>tag</b>
+            txt<b>tag</b>
+        </div>
+        <script>
+           let elem = document.querySelector('#elem')
+        for (let el of elem.childNodes){
+        console.log(el.nodeName + ' ')
+}
+            
+        </script>
+</body>
+</html>

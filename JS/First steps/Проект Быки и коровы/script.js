@@ -9,8 +9,36 @@ for(let i = 0; i < 4; i++){
     numbers.splice(index,1);
 
 }
+while(true){
 let guess = prompt("Write a four digit number");
+let number = [];
+let flag = true;
+
+    for(let i = 0; i < 4; i++){
+        if(number.includes(guess[i]) || guess.length != 4){
+            alert("write a different number");
+            flag = false;
+        } else{
+            number.push(guess[i])
+        }
+    }
+    if(!flag){
+        continue;
+    }
 if(+guess == secret_number){
     alert("You Won!");
+    break;
+} else {
+    let cows = 0;
+    let bulls = 0;
+    for(let i = 0; i < 4; i++){
+        if(guess[i] == secret_number[i]){
+            bulls++
+        } else if (secret_number.includes(guess[i])){
+            cows++;
+        }
+    }
+    console.log(guess);
+    console.log("Bulls: " + bulls + "Cows: " + cows);
 }
-console.log(secret_number)
+}
