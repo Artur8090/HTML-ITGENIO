@@ -125,7 +125,7 @@ function add(){
 }
 button.addEventListener('click',add);
 console.log(numContent)
-*/
+
 
 let val = document.querySelector('#newText').textContent;
 let valContent = document.querySelector('#newText');
@@ -137,3 +137,37 @@ function change(){
     valContent.textContent = val;
 }
 button.addEventListener('click',change)
+
+let num1 = document.querySelector('#num1');
+let num2 = document.querySelector('#num2');
+let submit = document.querySelector('#summary');
+num1 = num1.innerHTML;
+num2 = num2.innerHTML;
+function sum(){
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
+    console.log(num1 + num2);
+}
+
+submit.addEventListener('click',sum)
+
+let elem = document.querySelector('#elem');
+let submit = document.querySelector('#submit');
+submit.addEventListener('click',function(){
+    elem.type = "submit";
+})
+console.log(elem.type);
+
+let link = document.querySelector('#link');
+let submit = document.querySelector('#submit');
+let p = document.querySelector('#p');
+submit.addEventListener('click',function(){
+    let info = link.href;
+    p.innerHTML = info;
+})
+*/
+let link = document.querySelector('#link');
+let submit = document.querySelector('#submit');
+submit.addEventListener('click',function(){
+    link.innerHTML = link.innerHTML + "(" + link.href + ")"
+})
