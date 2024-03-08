@@ -65,7 +65,7 @@ function func(){
     link.innerHTML += link.href
     button.removeEventListener('click',func)
 }
-
+*/
 let buttonNum = 0;
 let button = document.querySelector('#button');
 button.addEventListener('click',func)
@@ -78,7 +78,7 @@ if(buttonNum <= 8){
     button.removeEventListener('click',func)
 }
 }
-*/
+
 function func(){
     this.textContent= this.textContent+'!';
     this.removeEventListener('click',func)
