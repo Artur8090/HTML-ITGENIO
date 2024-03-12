@@ -26,4 +26,5 @@ function func(){
     blockOne.dataset.name = blockTwo.dataset.name;
     blockTwo.dataset.name = firstData;    
 }
-button.addEventListener('click',func)
+button.addEventListener('click',funcArtur8090
+)
