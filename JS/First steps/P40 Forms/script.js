@@ -40,7 +40,7 @@ button.addEventListener('click',function(){
         text.innerHTML = 'bye'
     }
 })
-*/
+
 
 
 
@@ -58,4 +58,59 @@ inp2.addEventListener('input', function() {
     if (inp2.value.length > 1) {
         inp2.blur();
     }
+});
+
+let radio1 = document.querySelector('#one');
+let radio2 = document.querySelector('#two');
+let radio3 = document.querySelector('#three');
+let text = document.querySelector('#text');
+
+function func() {
+    if (this.checked === true) {
+        text.innerHTML = this.value;
+    }
+}
+
+radio1.addEventListener('change', func);
+radio2.addEventListener('change', func);
+radio3.addEventListener('change', func);
+
+let checkbox = document.querySelector('#checkbox');
+let button = document.querySelector('#button');
+
+button.addEventListener('click', function() {
+    checkbox.checked = !checkbox.checked;
+});
+
+let textarea = document.querySelector('#text');
+let div = document.querySelector('#div');
+
+textarea.addEventListener('blur',() => {
+	div.textContent = textarea.value;
+});
+
+
+
+let checkbox = document.querySelector('#checkbox');
+let button = document.querySelector('#button');
+let div = document.querySelector('#div');
+
+button.addEventListener('click', () => {
+	if (checkbox.checked) {
+		div.textContent = '111';
+	} else {
+		div.textContent = '222';
+	}
+});
+*/
+
+let checkbox = document.querySelector('#checkbox');
+let button = document.querySelector('#btn');
+
+button.addEventListener('click', () => {
+	if (checkbox.checked === true) {
+		console.log('+++');
+	} else {
+		console.log('---');
+	}
 });
