@@ -1,0 +1,14 @@
+#elem {
+	border: 1px solid pink;
+	width: 400px;
+	height: 400px;
+}
+ul {
+	padding: 30px;
+	border: 1px solid red;
+}
+li {
+	list-style-type: none;
+	margin-bottom: 20px;
+	border: 1px dashed black;
+}

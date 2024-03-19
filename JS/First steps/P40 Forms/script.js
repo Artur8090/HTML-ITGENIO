@@ -43,7 +43,6 @@ button.addEventListener('click',function(){
 
 
 
-
 let inp1 = document.querySelector('#inp1');
 let inp2 = document.querySelector('#inp2');
 
@@ -59,6 +58,15 @@ inp2.addEventListener('input', function() {
         inp2.blur();
     }
 });
+
+let inp3 = document.querySelector('#inp3');
+inp3.addEventListener('input',function(){
+    if(inp3.value.length < 5){
+        inp3.style.borderColor = "green"
+    } else if(inp3.value.length > 5){
+        inp3.style.borderColor = "red"
+    }
+})
 
 let radio1 = document.querySelector('#one');
 let radio2 = document.querySelector('#two');
