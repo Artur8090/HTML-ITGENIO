@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+
+:root {
+    --screen2-height: 70px;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url("bg.png");
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.answer-form {
+    display: none;
+    width: 50%;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    font-weight: bold;
+    color: white;
+    background-color: rgb(107, 255, 134);
+    border: solid 5px rgb(37, 221, 71);
+    border-radius: 15px;
+}
+
+.text {
+    text-align: center;
+    width: 50%;
+    font-size: 2em;
+    width: 51%;
+    line-height: 1.2em;
+    background-color: rgb(245, 245, 245);
+    padding: 20px;
+    border-radius: 30px;
+    border: solid 5px rgb(220, 220, 220);
+}
+
+.start {
+    font-size: 2em;
+    width: 200px;
+    height: 100px;
+}
+
+input {
+    font-size: 2em;
+    height: var(--screen2-height);
+
+    border: solid 5px rgb(37, 221, 71);
+    border-radius: 15px;
+    padding: 0 30px;
+    outline: 0;
+
+    text-align: center;
+}
+
+.ok, .restart {
+    font-size: 2em;
+    height: var(--screen2-height);
+    box-sizing: content-box;
+}
+
+.ok {
+    width: 100px;
+}
+
+.restart {
+    display: none;
+    width: 300px;
+}
+
+.result {
+    display: none;
+}
