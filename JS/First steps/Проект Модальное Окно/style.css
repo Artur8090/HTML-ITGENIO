@@ -1,0 +1,268 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: #24C6DC;
+}
+
+.circle {
+    position: fixed;
+    display: block;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.circle:hover {
+    transform: scale(1.4);
+}
+
+.circle:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    border: 3px solid #fff;
+    top: 150px;
+    left: -100px;
+    border-radius: 50%;
+}
+
+.circle:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    right: 90px;
+    top: 80px;
+    background:#fff;
+}
+
+.circle:nth-child(3) {
+    width: 200px;
+    height: 200px;
+    right: 300px;
+    bottom: -90px;
+    border: 3px solid #fff;
+}
+
+.circle:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: 390px;
+    top: 50px;
+    background:#fff;
+}
+  
+#btn{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: scale(1);
+    padding: 15px 35px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 18px;
+    color:#fff;
+    transition: 0.5s;
+}
+  
+#btn:focus{
+    outline: none;
+}
+  
+#btn:hover{
+    transform: scale(1.2);
+    background:rgb(16, 122, 136);
+    box-shadow: 0px 0px 20px rgba(56,56,56,.2);
+}
+
+/* МОДАЛЬНОЕ ОКНО */
+
+.modal_close {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+
+    background: none;
+    border: 0;
+
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+}
+
+.modal_close:focus {
+    outline: none;
+}
+
+.modal_img {
+    width: 20px;
+    height: 20px;
+}
+
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 51, 65, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    padding: 0 15px;
+}
+
+.modal_dialog {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    background-color: #fff;
+} 
+
+.modal_title {
+    margin-bottom: 10px;
+
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 700;
+}
+
+.modal_subtitle {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: black;
+    font-weight: 400;
+}
+
+.contact {
+    display: flex;
+    background: url(img/developer.jpg) left center no-repeat;
+    background-size: cover;
+    width: 50%;
+    transform: translateX(100%);
+}
+
+.contact_info {
+    margin: 15px 0 20px;
+    padding: 0;
+    list-style: none;
+
+    font-size: 15px;
+    color: black;
+    font-weight: 300;
+}
+
+.contact_info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.contact_info-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact_info-icon {
+    margin-right: 10px;
+}
+
+li img {
+    width: 15px;
+    height: 15px;
+}
+
+.contact_left {
+    width: 100%;
+    padding: 30px;
+    transform: translateX(-100%);
+}
+
+/* ФОРМА */
+
+.form_group {
+    margin-bottom: 10px;
+}
+
+.label {
+    display: inline-block;
+    margin-bottom: 5px;
+
+    font-size: 12px;
+    color: black;
+    font-weight: 700;
+}
+  
+.input, .textarea {
+    display: block;
+    width: 80%;
+
+    padding: 13px 17px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    color: #2b2a2c;
+
+    border: 1px solid rgba(112, 112, 112, 0.3);
+    border-radius: 18px;
+    
+    transition: border-color 0.2s linear;
+}
+
+.input:focus, .textarea:focus {
+    outline: none;
+    border-color: #36abc7;
+}
+
+input::placeholder, .textarea::placeholder {
+    color: black;
+}
+
+.textarea {
+    height: 100px;
+    resize: none;
+}
+
+.button {
+    display: inline-block;
+    vertical-align: top;
+    padding: 6px 15px;
+    min-width: 120px;
+
+    border: 1px solid gray;
+    border-radius: 15px;
+    background: none;
+
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 20px;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:hover {
+    background-color: #36abc7;
+    color: white;
+}
+
+.text-right {
+    text-align: right;
+    width: 80%;
+    margin-top: 20px;
+}
+
+/* АНИМАЦИЯ */
+

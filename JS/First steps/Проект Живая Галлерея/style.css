@@ -1,0 +1,22 @@
+img {
+    margin-top: 200px;
+    width: 500px;
+    border-radius: 25px;
+    border: 1px gray solid;
+}
+
+.button {
+    border-radius: 15px;
+    border: 1px gray solid;
+}
+#back:hover{
+    border-color: red;
+}
+#forward:hover{
+    border-color: red;
+}
+body{
+    background-image: url(fon.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
