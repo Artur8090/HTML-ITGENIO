@@ -1,55 +1,59 @@
 window.addEventListener('click', function(event) {
     const cartWrapper = document.querySelector('.cart-wrapper');
-    function toggleCartStatus(){
+
+    function toggleCartStatus() {
         let totalPrice = 0;
-        const cartEmpty = document.querySelector('[data-cart-empty]')
+        const cartEmpty = document.querySelector('[data-cart-empty]');
         const cartTotal = document.querySelector('.cart-total');
         const orderForm = document.querySelector('#order-form');
+        const deliveryFeeElement = document.querySelector('.delivery-cost');
 
-        if(cartWrapper.querySelectorAll('.cart-item').length > 0){
-            cartEmpty.classList.add('none')
-            cartTotal.classList.remove('none')
-            orderForm.classList.remove('none')
-        } else{
-            cartEmpty.classList.remove('none')
-            cartTotal.classList.add('none')
-            orderForm.classList.add('none')
+        if (cartWrapper.querySelectorAll('.cart-item').length > 0) {
+            cartEmpty.classList.add('none');
+            cartTotal.classList.remove('none');
+            orderForm.classList.remove('none');
+        } else {
+            cartEmpty.classList.remove('none');
+            cartTotal.classList.add('none');
+            orderForm.classList.add('none');
         }
-        cartWrapper.querySelectorAll('.cart-item').forEach(function(item){
-            const counter = item.querySelector('[data-counter]').innerText;
-            const priceOneItem = item.querySelector('.price__currency').innerText;
-            const price = parseInt(counter) * parseInt(priceOneItem);
-            const deliveryFee = item.querySelector('delivery-cost');
+
+        cartWrapper.querySelectorAll('.cart-item').forEach(function(item) {
+            const counter = parseInt(item.querySelector('[data-counter]').innerText);
+            const priceOneItem = parseInt(item.querySelector('.price__currency').innerText);
+            const price = counter * priceOneItem;
             totalPrice += price;
-            cartTotal.querySelector('.total-price').innerText = totalPrice
-            if(totalPrice >= 1000){
-                deliveryFee = 'Бесплатно'
-            } else{
-                deliveryFee = '300'
-            }
-        })
+        });
+
+        cartTotal.querySelector('.total-price').innerText = totalPrice;
+
+        let deliveryFee = '300';
+        if (totalPrice >= 1000) {
+            deliveryFee = 'Бесплатно';
+        }
+        deliveryFeeElement.innerText = deliveryFee;
     }
+
     if (event.target.hasAttribute('data-action')) {
         const counterWrapper = event.target.closest('.counter-wrapper');
         const counter = counterWrapper.querySelector('[data-counter]');
-        
-        if (event.target.dataset.action === 'plus') {
 
+        if (event.target.dataset.action === 'plus') {
             counter.innerText = ++counter.innerText;
-            if(event.target.closest('.cart-wrapper')){
+            if (event.target.closest('.cart-wrapper')) {
                 toggleCartStatus();
             }
-            if (event.target.closest('.cart-wrapper')) {   
-                if(parseInt(counter.innerText) > 1) {  
-                    counter.innerText = --counter.innerText;  
-                }   
-                else {  
-                    event.target.closest('.cart-item').remove();  
-                }  
-                toggleCartStatus();  
-            }  
+        } else if (event.target.dataset.action === 'minus') {
+            if (parseInt(counter.innerText) > 1) {
+                counter.innerText = --counter.innerText;
+                if (event.target.closest('.cart-wrapper')) {
+                    toggleCartStatus();
+                }
+            } else {
+                event.target.closest('.cart-item').remove();
+                toggleCartStatus();
+            }
         }
-
     } else if (event.target.hasAttribute('data-cart')) {
         const cart = event.target.closest('.card');
 
@@ -87,20 +91,15 @@ window.addEventListener('click', function(event) {
                 </div>
             </div>
         </div>`;
-        
 
-
-        const itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`)
-        if(itemInCart){
-            const counterElement = itemInCart.querySelector('[data-counter]')
+        const itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`);
+        if (itemInCart) {
+            const counterElement = itemInCart.querySelector('[data-counter]');
             counterElement.innerHTML = parseInt(counterElement.innerText) + parseInt(productInfo.counter);
-        } else{
-            const cartWrapper = document.querySelector('.cart-wrapper');
+        } else {
             cartWrapper.insertAdjacentHTML('beforeend', cartItemHtml);
-
         }
-        cart.querySelector('[data-counter]').innerText='1'
+        cart.querySelector('[data-counter]').innerText = '1';
         toggleCartStatus();
     }
 });
-
