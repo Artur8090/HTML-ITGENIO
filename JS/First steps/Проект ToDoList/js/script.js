@@ -3,18 +3,33 @@ const todo_control = document.querySelector('.todo-control'),
     todo_list = document.querySelector('.todo-list'),
     todo_completed = document.querySelector('.todo-completed');
 
-let todo_data = [
-    {
-        value: 'eat', 
-        completed: true
-    },{
-        value: 'sleep', 
-        completed: false
-    }];
-todo_completed.addEventListener('click', addToDo(todo_data));
 
-function addToDo(arr) {
-    arr.forEach((item) => {
+    
+        if(localStorage.todo_saved !== null){
+            todo_data = JSON.parse(localStorage.getItem('todo_saved'))
+        } else{
+            todo_data = [];
+        }
+
+todo_control.addEventListener('submit',function(event){
+    console.log(1)
+    event.preventDefault();
+    
+    if(header_input.value.length > 0){
+        let new_todo = {value:header_input.value, completed: false}
+        todo_data.push(new_todo)
+        header_input.value = "";
+        addToDo();
+    }
+
+})
+
+todo_completed.addEventListener('click', addToDo);
+
+function addToDo() {
+    todo_list.textContent = "";
+    todo_completed.textContent = "";
+    todo_data.forEach((item, index) => {
         let li = document.createElement('li');
         li.innerHTML = `<span class="text-todo">${item.value}</span>
         <div class='todo-buttons'>
@@ -31,12 +46,13 @@ function addToDo(arr) {
         const btn_todo_complete = li.querySelector('.todo-complete');
         btn_todo_complete.addEventListener('click', function() {
             item.completed = !item.completed;  
-            addToDo(todo_data);
-            });
+            addToDo();
+        });
         const btn_todo_remove = li.querySelector('.todo-remove')
         btn_todo_remove.addEventListener('click', function(){
-            item.remove();
-            addToDo(todo_data)
+            todo_data.splice(index, 1);
+            addToDo();
         })
-        });
+    });
+    localStorage.setItem('todo_saved',JSON.stringify(todo_data))
 }
