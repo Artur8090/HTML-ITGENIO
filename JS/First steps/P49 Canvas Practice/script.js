@@ -43,10 +43,34 @@ ctx.fill();
 
 ctx.fillRect(50,50,200,175)
 ctx.clearRect(75,75,95,85)
+
+
+
+ctx.arc(100, 100, 75, 0, getRadians(180))
+
+
+ctx.moveTo(250,250)
+ctx.strokeStyle = 'red';
+ctx.lineTo(300,250);
+ctx.stroke()
+ctx.moveTo(250,260);
+ctx.strokeStyle = 'green';
+ctx.lineTo(300,260)
+
+ctx.fillStyle = 'red'
+ctx.fillRect(50,50,75,75);
 */
+
+for(let i = 10; i < 100; i+=10){
+    ctx.moveTo(100, 100+i)
+    ctx.lineTo(200, 100+i)
+}
+for(let i = 10; i < 100; i+=10){
+    ctx.moveTo(100+i, 100)
+    ctx.lineTo(100+i, 200)
+}
+
+ctx.stroke()
 function getRadians(degrees){
     return (Math.PI/180)*degrees
 }
-
-ctx.arc(100, 100, 75, 0, getRadians(180))
-ctx.stroke()
