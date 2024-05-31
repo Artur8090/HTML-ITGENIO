@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <div class="Toolbar">
+            - Цвет - <br>
+            <img src="Img/Green.png" alt="" id="greenPen" onclick="changeColor('rgb(131,190,61)',this)">
+            <img src="Img/Blue.png" alt="" id="bluePen" onclick="changeColor('rgb(0,86,166)',this)">
+            <img src="Img/Red.png" alt="" id="redPen" onclick="changeColor('rgb(212,21,29)',this)">
+    </div>
+    <div class="Toolbar">
+            - Толщина - <br>
+            <img src="Img/SmallDot.png" alt="" onclick="changeThickness(1,this)">
+            <img src="Img/MediumDot-removebg-preview.png" alt="" onclick="changeThickness(5,this)">
+            <img src="Img/bigDot-removebg-preview.png" alt="" onclick="changeThickness(10,this)">
+    </div>
+    <div class="CanvasContainer">
+        <canvas id="drawingCanvas" width="500" height="300"></canvas>
+    </div>
+    <div class="Toolbar">
+        - Операции - <br>
+        <button onclick="saveCanvas()">Сохранить содержимое Canvas</button>
+        
+        <button onclick="clearCanvas()">Очистить Canvas</button>
+        <div id="savedCopyContainer">
+            <img id="savedImageCopy"><br>
+            Щелкните правой кнопкой мыши для сохранение...
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
