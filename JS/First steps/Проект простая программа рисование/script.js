@@ -55,7 +55,7 @@ function clearCanvas(){
 function saveCanvas(){
     let imageCopy = document.getElementById('savedImageCopy');
 
-    imageCopy.src= canvas.toDataUrl();
+    imageCopy.src= canvas.toDataURL();
     let imageContainer = document.getElementById('savedCopyContainer')
     imageContainer.style.display = 'block'
 }
