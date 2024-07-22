@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<!--
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Content Loader</title>
+    <script src="jQuery.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            $('#loadButton').click(function() {
+                $('#content').load('AJAX.html');
+            });
+        });
+    </script>
+    <div id="content">
+    </div>
+    <button id="loadButton">Load Content</button>
+</body>
+</html>
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Content Loader</title>
+    <script src="jQuery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('button').click(function() {
+                var ajaxFile = $(this).data('ajax');
+                $('#content').load(ajaxFile);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+
+    </div>
+    <button data-ajax="AJAX1.html">Load AJAX1</button>
+    <button data-ajax="AJAX2.html">Load AJAX2</button>
+    <button data-ajax="AJAX3.html">Load AJAX3</button>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <script src="jQuery.js"></script>
+    <script>
+        $(document).ready(function() {
+            var loading = false; // To prevent multiple loads
+            var currentPage = 1;
+            var totalPages = 2; // Total pages to load
+
+            function loadProducts(page) {
+                if (loading || page > totalPages) return;
+
+                loading = true;
+                $('#loadingMessage').text('Loading more products...');
+
+                $.ajax({
+                    url: page === 1 ? 'AJAX5.html' : 'AJAX6.html',
+                    success: function(data) {
+                        $('#products').append(data);
+                        $('#loadingMessage').text('');
+                        loading = false;
+                        currentPage++;
+
+                        if (currentPage > totalPages) {
+                            $('#loadingMessage').text('No more products to load.');
+                        }
+                    },
+                    error: function() {
+                        $('#loadingMessage').text('Failed to load products.');
+                        loading = false;
+                    }
+                });
+            }
+
+            $(window).scroll(function() {
+                if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+                    loadProducts(currentPage);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="products">
+
+    </div>
+    <div id="loadingMessage"></div>
+</body>
+</html>
