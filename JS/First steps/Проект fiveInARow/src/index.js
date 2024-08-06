@@ -4,12 +4,12 @@ import Logic from './logic.js';
 const fieldSize = askSize();
 const logic = new Logic(fieldSize);
 let point;
-do{
+
+do {
     outField(logic.field);
-    point = askPoint(fieldSize, logic.isFilled)
+    point = askPoint(fieldSize, logic.isFilled.bind(logic));
     logic.setPoint(point);
+} while (!logic.isWin(point));
 
-} while(!logic.isWin(point)){
-outField(logic.field)
-
-}
+sayWin(); 
+outField(logic.field);
