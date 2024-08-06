@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="size-container">
+        <label>
+            Введите размер поля
+            <input type="number" min="5" max="20" id="size">
+        </label>
+        <button id="size-button">Подтвердить</button>
+    </div>
+    <canvas id="canvas" width="800" height="800"></canvas>
     <script type="module" src="src/index.js"></script>
 </body>
 </html>

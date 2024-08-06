@@ -1,15 +1,17 @@
-import { askPoint, askSize, outField, sayWin } from "./client.js";
+import { askSize, sayWin } from "./client.js";
 import Logic from './logic.js';
-
-const fieldSize = askSize();
-const logic = new Logic(fieldSize);
-let point;
-
-do {
-    outField(logic.field);
-    point = askPoint(fieldSize, logic.isFilled.bind(logic));
-    logic.setPoint(point);
-} while (!logic.isWin(point));
-
-sayWin(); 
-outField(logic.field);
+import Client from "./client.js";
+async function main(){
+    const fieldSize = await askSize();
+    const logic = new Logic(fieldSize);
+    const client = new Client(fieldSize)
+    let point;
+    do {
+        client.outField(logic.field);
+        point = await client.askPoint(logic.isFilled);
+        logic.setPoint(point);
+    } while (!logic.isWin(point));
+    outField(logic.field);  
+    sayWin(); 
+}
+main();

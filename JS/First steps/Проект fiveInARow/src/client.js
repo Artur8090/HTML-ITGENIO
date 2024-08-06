@@ -1,35 +1,38 @@
-export function askSize() {
-    let size = 0;
-    while(size > 100 || size < 5){
-        size = +prompt('Введите число которое больше 5ти и менше 100');
-    }
-    return size;
-}
+export async function askSize() {
+    const sizeInput = document.getElementById('size');
+    const button = document.getElementById('size-button');
+    return new Promise((res) => (
+        button.onclick = () =>{
+        res(+sizeInput.value);
+        button.onclick = null;
 
-export function outField(field) {
-    let str = "";
-    for(const row of field){
-        str += row.reduce((prev, el) => `${prev} ${el !== undefined ? el : '-'}`, '') + '\n';
-    }
-    console.log(str);
-}
-
-export function askPoint(size, isFilled){
-    let x, y;
-    do {
-        x = +prompt('Введите х кординат')
-        y = +prompt('Введите у кординат')
-    } while(!isCoordInBetween(x) || !isCoordInBetween(y) || isFilled(x,y)){
-        return{x,y};
-
-    }
-            
-    function isCoordInBetween(coordinate){
-        return coordinate >= 0 && coordinate < size;
-    }
+    }))
 
 }
+
+
 
 export function sayWin(){
     return console.log('Победа')
+}
+
+export default function Client(size){
+    const canvas = document.querySelector('#canvas');
+    const ctx = canvas.getContext('2d');
+    const canvasWidth = 800;    
+    const cellSize = canvas.width/size;
+    function outField(field){
+        ctx.clearRect(0,0,canvas.width,canvas.width);
+        for(let i = 0; i < field.length; i++){
+            for(let j = 0; j < field[i].length; j++){
+                ctx.strokeRect(i * cellSize, j * cellSize, cellSize, cellSize);
+                if(!field[i][j]) continue;
+                ctx.fillStyle = colors[field[i][j]];
+                ctx.fillRect(i * cellSize, j * cellSize, cellSize, cellSize)
+            }
+        }
+    }
+    return {
+        outField,
+    };
 }
