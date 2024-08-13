@@ -11,7 +11,7 @@ export default class Logic {
         return this._field.map((row) => [...row]);
     }
 
-    isFilled(x, y) {
+    isFilled = (x, y) => {
         return !!this._field[y][x];
     }
 
@@ -19,6 +19,9 @@ export default class Logic {
         this._field[y][x] = this._playerSwitch ? 'X' : 'O';
         this._playerSwitch = !this._playerSwitch;
     }
+
+
+
 
     isWin({ x, y }) {
         const field = this._field;

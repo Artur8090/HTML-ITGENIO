@@ -10,8 +10,7 @@ async function main(){
         client.outField(logic.field);
         point = await client.askPoint(logic.isFilled);
         logic.setPoint(point);
-    } while (!logic.isWin(point));
-    outField(logic.field);  
+    } while (!logic.isWin(point)); 
     sayWin(); 
 }
 main();
