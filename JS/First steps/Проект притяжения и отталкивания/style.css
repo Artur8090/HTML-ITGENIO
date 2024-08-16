@@ -2,4 +2,6 @@ body{
     margin: 0;
     overflow: hidden;
     background-color: #000924;
+    width: 100vw;
+    height: 100vh;
 }
