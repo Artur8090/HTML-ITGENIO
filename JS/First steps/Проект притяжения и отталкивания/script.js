@@ -1,15 +1,14 @@
 function start() {
-    
+
     const config = {
         dotMinRad : 6,
         dotMaxRad : 20,
         defColor: `rgba(250, 10, 30, 0.9)`,
         massFactor: 0.002,
-        smooth: 0.95,
+        smooth: 0.65,
         sphereRad: 300,
         bigDotRad: 35,
-        mouseSize: 120,
-
+        mouseSize: 120
     }
 
     const TWO_PI = 2 * Math.PI;
@@ -17,11 +16,10 @@ function start() {
     const canvas = document.querySelector("canvas");
     const ctx = canvas.getContext("2d");
 
-    let w, h, mouse, dots, r;
+    let w, h, mouse, dots;
 
     class Dot {
-    
-        constructor() {
+        constructor(r) {
             this.pos = {x: mouse.x, y: mouse.y}
             this.rad = r || random(config.dotMinRad, config.dotMaxRad);
             this.color = config.defColor;
@@ -29,7 +27,7 @@ function start() {
             this.vel = {x: 0, y: 0}
         }
 
-        draw() {
+        draw(x, y) {
             this.pos.x = x || this.pos.x + this.vel.x;
             this.pos.y = y || this.pos.y + this.vel.y;
             createCircle(this.pos.x, this.pos.y, this.rad, true, this.color);
@@ -43,19 +41,18 @@ function start() {
 
             for (let j = 0; j < dots.length; j++) {
                 if (i == j) continue;
-                let a = dots[i];
-                let b = dots[j];
+                let [a, b] = [dots[i], dots[j]];
 
                 let delta = {x: b.pos.x - a.pos.x, y: b.pos.y - a.pos.y};
-
-                let alpha = config.mouseSize / dist
-                
                 let dist = Math.sqrt(delta.x * delta.x + delta.y * delta.y) || 1; 
-                let force = (dist - config.sphereRad) / dist *  b.mass;
+                let force = (dist - config.sphereRad) / dist * b.mass;
 
+                if (j == 0) {
+                    let alpha = config.mouseSize / dist;
+                    a.color = `rgba(250, 10, 30, ${alpha})`;
+                    dist < config.mouseSize ? force = (dist - config.mouseSize) * b.mass : force = a.mass;
+                }
 
-                dist < config.mouseSize ? force = (dist - config.mouseSize) * b.mass : force = a.mass;
-                
                 acc.x += delta.x * force;
                 acc.y += delta.y * force;
             }
@@ -63,7 +60,9 @@ function start() {
             dots[i].vel.x = dots[i].vel.x * config.smooth + acc.x * dots[i].mass;
 			dots[i].vel.y = dots[i].vel.y * config.smooth + acc.y * dots[i].mass;
         }
-        dots.map(elem => elem == dots[0] ? elem.draw(mouse.x, mouse.y) : elem.draw());
+
+        dots.map(elem => elem  == dots[0] ? elem.draw(mouse.x, mouse.y) : elem.draw());
+
     }
 
     function createCircle(x, y, rad, fill, color) {
@@ -81,10 +80,12 @@ function start() {
     function init() {
         w = canvas.width = innerWidth;
         h = canvas.height = innerHeight;
-        mouse = {x: w / 2, y: h / 2, down: false};
-        dots = [];
-        dots.push(new Dot(config.bigDotRad, config.dotMaxRad))
 
+        mouse = {x: w / 2, y: h / 2, down: false};
+
+        dots = [];
+
+        dots.push(new Dot(config.bigDotRad))
 
     }
 
@@ -93,7 +94,6 @@ function start() {
 
         if (mouse.down) { dots.push(new Dot()) }
         updateDots();
-
 
         window.requestAnimationFrame(loop);
     }
