@@ -1,0 +1,84 @@
+/* General Styles */
+
+
+/* Layout Styles */
+main {
+    display: flex;
+    width: 1230px;
+    margin: 20px auto;
+    gap: 20px; /* Space between sections */
+}
+
+.main-news-container, .hot-container, .last-news {
+    flex: 1;
+}
+
+/* Main News */
+.big-news-container #big-image {
+    width: 690px;
+    height: 360px;
+}
+
+.info-container {
+    padding: 10px 0;
+}
+
+
+
+
+.yellow {
+    background-color: #f0ad4e;
+}
+
+.blue {
+    background-color: #007bff;
+}
+
+.statistic {
+    display: flex;
+    gap: 15px;
+}
+
+.main-news-container .big-news-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-news-container h1, .main-news-container p {
+    padding: 10px 0;
+}
+
+
+.section-header {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 15px;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+
+.hot-container .small-news-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.hot-container #small-image {
+    width: 100%;
+    height: auto;
+}
+
+.hot-container .tag {
+    margin: 10px 0;
+}
+
+.hot-container h2 {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+

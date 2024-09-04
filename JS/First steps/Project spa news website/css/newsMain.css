@@ -1,0 +1,12 @@
+.tag{
+    background-color: #68E082;
+
+}
+main{
+    position:relative;
+}
+.full-news-container{
+    width: 30%;
+    position:absolute;
+    margin-left: 25%;
+}

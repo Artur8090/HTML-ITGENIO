@@ -1,0 +1,18 @@
+.last-news .last-news-time {
+    color: #888888;
+}
+
+.last-news p, span {
+    font-size: 12px;
+}
+
+.last-news{
+    width: 220px;
+    height: 500px;
+    float: right;
+    margin-right: 60px;
+}
+.last-news-text{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

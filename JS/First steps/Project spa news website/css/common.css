@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.tag-statistic-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.tag {
+    background-color: #f0ad4e; /* Example color */
+    color: white;
+    padding: 5px 10px;
+    display: inline-block;
+}
