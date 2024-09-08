@@ -1,12 +1,146 @@
-.tag{
+.tag {
     background-color: #68E082;
+    margin: 20px 20px;
+}
 
+main {
+    position: relative;
 }
-main{
-    position:relative;
-}
-.full-news-container{
-    width: 30%;
-    position:absolute;
+
+.full-news-container {
+    width: 50%;
+    position: absolute;
     margin-left: 25%;
+}
+
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0;
+    margin-left: 25%;
+}
+
+
+.add-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-left: 25%;
+    width: 50%;
+}
+
+.user-comment-image {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Ensure the full-news-container is properly spaced from the comment section */
+.full-news-container {
+    margin-bottom: 60px; 
+    position: relative;
+}
+
+.added-comments-container {
+    width: 50%;
+    margin-left: 25%; /* Align with the add-container */
+}
+
+.comment-container {
+    display: flex;
+    margin: 20px 0;
+    width: 100%; /* Full width of its container */
+}
+
+.user-comment-image {
+    width: 50px; /* Adjust to match your design */
+    height: 50px; /* Ensure it's square */
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.comment-content {
+    flex: 1; /* Allow it to take up remaining space */
+}
+
+.username {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.comment-text {
+    margin-bottom: 10px;
+}
+
+.comment-actions {
+    margin-bottom: 10px;
+}
+
+.answer {
+    color: #888888;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.hide-show {
+    display: flex;
+    align-items: center;
+    color: #888888;
+    cursor: pointer;
+}
+
+.hide-show img {
+    margin-right: 5px;
+}
+
+/* Sub-comments section */
+.sub-comments {
+    margin-top: 10px;
+    padding-left: 20px; /* Indent sub-comments */
+}
+
+.sub-comment {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+/* Container for subuser logo and content */
+.subcomment-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 10px;
+}
+
+/* Logo image */
+.subuser-logo {
+    width: 20px; /* Desired width */
+    height: 20px; /* Desired height */
+    margin-right: 10px;
+    object-fit: cover; /* Ensures image covers the container without stretching */
+    display: block; /* Ensures the image behaves as a block element */
+}
+
+/* Optional: Container constraints */
+.subcomment-container img {
+    max-width: 100%; /* Ensure image does not exceed container width */
+    max-height: 100%; /* Ensure image does not exceed container height */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.sub-comment-content {
+    flex: 1; /* Allow content to take up remaining space */
+}
+
+.sub-username {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.sub-comment-text {
+    color: #333;
 }

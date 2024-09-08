@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/addNews.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#"><img src="../public/logo.png" alt="LIVE"></a>
+            <nav>
+                <div>Новости</div>
+                <div>Финансы</div>
+                <div>Недвижимость</div>
+                <div>Спорт</div>
+                <div>Афиша</div>
+                <div>Магазины</div>
+                <div>Работа</div>
+                <div>ТВ Программа</div>
+                <div>Почта</div>
+                <div>Погода</div>
+            </nav>
+            <div>
+                <img src="./public/search.svg" alt="">
+                <img src="./public/user_logo.svg" alt="">
+                <img src="./public/add.svg" alt="">
+            </div>
+        </div>
+    </header>
+    <form action="#" method="post" class="full-news-container">
+        <div class="info-container">
+            Категория:
+            <select>
+                <option value="property">Недвижимость</option>
+            </select>
+        </div>
+        <input type="text" placeholder="Текст загаловка" class="news-name">
+        <div class="image-container">
+            <img src="../public/plus.png" alt="">
+        </div>
+        <div class="full-text" contenteditable="true" data-text="Основной текст новости"></div>
+        <div class="button-container">
+            <button>Отмена</button>
+            <button class="add-button">Сохранить новость</button>
+        </div>
+    </form>
+</body>
+</html>

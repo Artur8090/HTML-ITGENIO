@@ -15,3 +15,53 @@
     padding: 5px 10px;
     display: inline-block;
 }
+
+
+.add-container input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px rgb(191, 191, 191) solid;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto; 
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.add-button {
+    background-color: #ed264a; /* Light red */
+    color: white;
+    font-weight: bold;
+}
+
+button.cancel-button {
+    color: black;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+button.cancel-button:hover {
+    background-color: #f0f0f0; /* Slight background change on hover */
+}
