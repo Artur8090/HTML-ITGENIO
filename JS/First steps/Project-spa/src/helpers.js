@@ -1,4 +1,5 @@
 
+import outNews from './news.js';
 import { TAG_COLORS, TAG_NAMES } from './options.js';
 export function makeFriendlyNumber(num){
         if(num >= 1000000){
@@ -30,4 +31,11 @@ export function addStatistic(node, likesCount, commentsCount ) {
     node.children[0].innerHTML = `<img src="./public/heart.svg" alt=""> ${likes}`
     const comments = makeFriendlyNumber(commentsCount);
     node.children[1].innerHTML = `<img src="./public/comments.svg" alt=""> ${comments}`
+}
+
+export function addNewsLinkClick(node, id){
+    node.onclick = event =>{
+        event.preventDefault();
+        outNews(id)
+    }
 }
