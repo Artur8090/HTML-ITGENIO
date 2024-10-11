@@ -1,12 +1,13 @@
-import { fullNews, loggedUser } from "../src/backend.js";
+import { addComment, fullNews, loggedUser } from "../src/backend.js";
 import { addStatistic, addTag } from "./helpers.js";
 import { DATE_OPTION } from "./options.js";
 import outCards from "./outCards.js";
 import { switchToNews } from "./router.js";
 import { news } from "../src/backend.js";
 import { configCardNode } from "./lastNewsCardConfig.js";
+import outComments from "./outComments.js";
 const newsPage = document.getElementById('news-page');
-
+const addCommentContainer = document.getElementById('add-comment-container')
 export default function outNews(newsId){
     newsPage.id = newsId;
     const sortByDate =[...news].sort((n1,n2) => n2.date - n1.date);
@@ -15,6 +16,7 @@ export default function outNews(newsId){
     addStatistic(newsPage.children[0],oneNews.likesCount, oneNews.commentsCount);
     outOneNews(newsPage.children[1], oneNews);
     switchToNews();
+    addComment(configAddCommentContainer(newsId),newsId)
 }
 function outOneNews(newsContainer, {tag,title,date,img,text}){
     const infoContainer = newsContainer.children[0];
@@ -32,7 +34,7 @@ function configAddCommentContainer(newsId){
         contentContainer.children[0].value = '';
     };
     buttonContainer.children[1].onclick = () => {
-        addComment(commentContainer.children[0].value, newsId);
+        addComment(contentContainer.children[0].value, newsId);
         contentContainer.children[0].value = '';
         outComments(newsId)
     }

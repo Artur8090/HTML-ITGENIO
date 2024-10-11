@@ -19,7 +19,7 @@ export const news = [
     date: new Date(2020, 10, 4, 11, 58),
     title: 'Рандомный загаловок1',
     description: 'Рандомный Текст1',
-    likesCount: 11500,
+    likesCount: 240000,
     commentsCount: 11500,
     isLiked: true  
     }
@@ -31,7 +31,7 @@ export const fullNews = [    {
     date: new Date(2020, 10, 4, 11, 58),
     title: 'Требониан Галл происходил из старинного этрусского рода...',
     description: 'Будущий император Гай Вибий Требониан Галл родился около 206 года...',
-    likesCount: 11500,
+    likesCount: 20000,
     commentsCount: 11500,
     isLiked: true
     },
@@ -69,7 +69,7 @@ export const loggedUser = {
 }
 
 export function addSubComment(newsId, text, user, answerTo){
-    const subComment = allComments.find(c => c.id === newsId).subComments;
+    const subComments = allComments.find(c => c.id === newsId).subComments;
     subComments.push({
         id: subComments[subComments.length-1].id + 1,
         text,
@@ -80,6 +80,8 @@ export function addSubComment(newsId, text, user, answerTo){
 export function updateComment(id, text){
     allComments.find(c => c.id === id).text = text;
 }
+let lastCommentId = 0;
+export const allComments = [];
 export function addComment(text, newsId){
     lastCommentId++;
     allComments.push({

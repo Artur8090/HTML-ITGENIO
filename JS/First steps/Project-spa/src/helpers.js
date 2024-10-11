@@ -39,3 +39,7 @@ export function addNewsLinkClick(node, id){
         outNews(id)
     }
 }
+
+export function switchDisplay(node){
+    node.style.display = node.style.display === 'none' ? 'flex' : 'none'; 
+}

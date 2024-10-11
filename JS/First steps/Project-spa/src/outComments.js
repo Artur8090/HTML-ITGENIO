@@ -1,6 +1,8 @@
-import { loggedUser, updateComment } from "./backend.js";
+import { loggedUser, updateComment, allComments } from "./backend.js";
+import { switchDisplay } from "./helpers.js";
+const commentContainer = document.getElementById('comment-container')
 
-function configComment({user, id, text, commentId, answerTo}, node, redactHandler, answerHandler){
+function configComment({user, id, text, answerTo}, node, redactHandler, answerHandler){
     const copy = node.children[0].cloneNode(true);
     copy.style.display = 'flex';
     copy.id = id;
@@ -31,18 +33,23 @@ function configText(textContainer, answerTo, text){
 }
 
 export default function outComments(newsId){
+    console.log('running')
     cleanContainer(commentContainer);
     cleanContainer(commentContainer.children[0].children[1].children[4]);
     const comments = allComments.filter(c => c.newsId === newsId);
     comments.forEach(comment => {
+
+            console.log(commentContainer.innerHTML)
         const copy = configComment(comment, commentContainer, redactCommentHandler, () => answerHandler(comment.id, copy.children[1].children[5]));
         configHideShowButton(copy.children[1]);
         const subCommentContainer = copy.children[1].children[4];
         comment.subComments?.forEach(subComment => {
+                console.log('running')
             const subCommentCopy = configComment(subComment, subCommentContainer, redactSubComment, () => answerHandler(comment.id,copy.children[1].children[5]) );
             subCommentContainer.appendChild(subCommentCopy);
         })
         commentContainer.appendChild(copy)
+
     });
     
 }
@@ -53,7 +60,7 @@ function cleanContainer(node){
 }
 
 function configHideShowButton(contentContainer){
-    const showContent = '<img src="./public/down-arrow.svg" alt="">Показать все ответы'; 
+    const showContent = '<img src="./public/arrow-down-black.svg" alt="">Показать все ответы'; 
     const hideContent = '<img src="./public/up-arrow.svg" alt="">Скрыть все ответы';
     const hideShowButton = contentContainer.children[3];
     const subCommentContainer = contentContainer.children[4];
@@ -65,6 +72,7 @@ function configHideShowButton(contentContainer){
     }
 }
 function answerHandler(newsId, answerNode){
+    console.log('works')
     answerNode.style.display = 'block';
     answerNode.children[1].children[2].onclick = () => {
         const text = answerNode.children[1].children[1].value;
@@ -78,6 +86,7 @@ function answerHandler(newsId, answerNode){
 function redactCommentHandler({id, node}){
     let isEditable = false;
     node.children[1].children[2].onclick = () => {
+        console.log('works')
         if(!isEditable){
             console.log(node.children);
             node.children[1].children[1].setAttribute('contentEditable','true');
@@ -92,18 +101,17 @@ function redactCommentHandler({id, node}){
         isEditable = !isEditable;
     }
 }
-function redactSubComment({id, answerTo,         node}){
+function redactSubComment({id, answerTo, node}){
     let isEditable = false;
     node.children[1].children[2].onclick = () => {
         if(!isEditable){
-            console.log(node.children);
             node.children[1].children[1].setAttribute('contentEditable','true');
             node.children[1].children[2].innerHTML = 'Сохранить'
         }else{
             node.children[1].children[1].removeAttribute('contentEditable');
             const text = node.children[1].children[1].innerText;
             updateSubComment(id, text);
-            configText(node.children[1].children[1], null, text);
+            configText(node.children[1].children[1], answerTo, text);
             node.children[1].children[2].innerHTML = 'Редактировать'
         }
         isEditable = !isEditable;   
